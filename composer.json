@@ -1,0 +1,26 @@
+{
+    "name": "hgg/json",
+    "type": "library",
+    "description": "A collection of Json convenience methods that provide error handling",
+    "keywords": [ "json", "prettyprint", "exceptions" ],
+    "homepage": "http://github.com/hglattergotz/json",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Henning Glatter-Götz",
+            "email": "henning@glatter-gotz.com",
+            "homepage": "http://glatter-gotz.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "camspiers/json-pretty": "dev-master#7ea1c767e653a487559403af82dc11c12b2bd108"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7.0"
+    },
+    "autoload": {
+        "psr-0": { "HGG\\Json\\": "src/" }
+    },
+    "minimum-stability": "dev"
+}
