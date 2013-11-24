@@ -11,13 +11,13 @@ class Json
      * Decodes a json string or file and provides error handling via exceptions
      * and takes the burden of using json_last_error from the caller.
      *
-     * @param mixed $json
-     * @param bool  $assoc
-     * @param int   $depth
+     * @param string $json
+     * @param bool   $assoc
+     * @param int    $depth
      * @static
      * @access public
      *
-     * @return void
+     * @return array
      *
      * @throws HGG\Json\Exception\RuntimeException
      */
@@ -45,7 +45,10 @@ class Json
      * @param int   $options
      * @static
      * @access public
+     *
      * @return string
+     *
+     * @throws HGG\Json\Exception\RuntimeException
      */
     public static function encode($data, $options = 0)
     {
