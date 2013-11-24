@@ -1,8 +1,8 @@
 {
     "name": "hgg/json",
     "type": "library",
-    "description": "A collection of Json convenience methods that provide error handling",
-    "keywords": [ "json", "prettyprint", "exceptions" ],
+    "description": "Encode, decode, handle errors (exceptions) and pretty print JSON",
+    "keywords": [ "json", "encode", "decode", "prettyprint", "exceptions", "error handling" ],
     "homepage": "http://github.com/hglattergotz/json",
     "license": "MIT",
     "authors": [
