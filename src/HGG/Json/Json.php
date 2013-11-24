@@ -2,6 +2,7 @@
 
 namespace HGG\Json;
 
+use HGG\Json\Exception\RuntimeException;
 use Camspiers\JsonPretty\JsonPretty;
 
 class Json
@@ -15,13 +16,16 @@ class Json
      * @param int   $depth
      * @static
      * @access public
+     *
      * @return void
+     *
+     * @throws HGG\Json\Exception\RuntimeException
      */
     public static function decode($json, $assoc = false, $depth = 512)
     {
         if (strpos($json, "\n") === false && is_file($json)) {
             if (false === is_readable($json)) {
-                throw new \Exception(sprintf('Unable to parse "%s" as the file is not readable.', $json));
+                throw new RuntimeException(sprintf('Unable to parse "%s" as the file is not readable.', $json));
             }
 
             $json = file_get_contents($json);
@@ -83,7 +87,9 @@ class Json
      */
     protected static function isJsonError()
     {
-        switch (json_last_error()) {
+        $code = json_last_error();
+
+        switch ($code) {
         case JSON_ERROR_NONE:
             $errorMsg = null;
             break;
@@ -108,7 +114,7 @@ class Json
         }
 
         if (null !== $errorMsg) {
-            throw new \Exception('JSON decode error'.$errorMsg);
+            throw new RuntimeException(sprintf('JSON Error%s', $errorMsg), $code);
         }
 
         return false;
