@@ -6,8 +6,9 @@ Json is a collection of static methods to simplify working with JSON in PHP.
 
 ## Features
 
- * **_encode_** to JSON with error handling
+ * **_encode_** to JSON string with error handling
  * **_decode_** from a string or file path containing valid JSON with error handling
+ * **_validate_** a JSON document against a JSON Schema
  * **_pretty print_** a JSON string
 
 ## Installation
@@ -16,7 +17,8 @@ Json is a collection of static methods to simplify working with JSON in PHP.
 
 ## Dependencies
 
- * [JSON-Pretty](https://github.com/camspiers/json-pretty) A Json pretty printer by Cam Spiers
+ * [JsonPretty](https://github.com/camspiers/json-pretty) A Json pretty printer by Cam Spiers
+ * [JsonSchema](https://github.com/justinrainbow/json-schema) A Json Schema validation library by Justin Rainbow
 
 ## Usage
 
@@ -73,10 +75,19 @@ the message as well as the code.
 ```php
 <?php
 
+$invalidJson = '{';
+
 try {
-    $json = Json::encode($data);
+    $data = Json::decode($invalidJson);
 } catch (HGG\Json\Exception\RuntimeException $e) {
     printf("Error message: %s\n", $e->getMessage());
     printf("Error code: %d\n", $e->getCode());
 }
+```
+
+The code above example will output:
+
+```
+Error message: JSON Error - Syntax error, malformed JSON
+Error code: 4
 ```

@@ -8,4 +8,5 @@ namespace HGG\Json\Exception;
  * @author Henning Glatter-Götz <henning@glatter-gotz.com>
  */
 interface ExceptionInterface
-{}
+{
+}
