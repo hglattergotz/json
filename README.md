@@ -15,6 +15,20 @@ Json is a collection of static methods to simplify working with JSON in PHP.
 
  * Via [Composer](http://getcomposer.org), package [hgg/json](https://packagist.org/packages/hgg/json)
 
+ **NOTE:**
+
+The json-schema library version used here is currently a fork so you need to add the following
+to your composer.json file.
+
+```json
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "http://github.com/hglattergotz/json-schema"
+        }
+    ],
+```
+
 ## Dependencies
 
  * [JsonPretty](https://github.com/camspiers/json-pretty) A Json pretty printer by Cam Spiers
