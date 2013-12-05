@@ -113,7 +113,8 @@ class Json
     {
         $data = Json::decode(self::loadJSONString($data));
         $schema = Json::decode(self::loadJSONString($schema));
-        $schemas = array('single_schema' => $schema);
+        $key = (!empty($schema->id)) ? $schema->id : 'single_schema';
+        $schemas = array($key => $schema);
         $retriever = new \JsonSchema\Uri\Retrievers\PredefinedArray($schemas);
         $uriRetriever = new \JsonSchema\Uri\UriRetriever;
         $uriRetriever->setUriRetriever($retriever);
