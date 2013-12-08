@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.3.3",
         "camspiers/json-pretty": "dev-master#7ea1c767e653a487559403af82dc11c12b2bd108",
-        "justinrainbow/json-schema": "dev-master"
+        "justinrainbow/json-schema": "dev-*"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7.0"
