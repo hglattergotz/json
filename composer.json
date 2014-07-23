@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "camspiers/json-pretty": "dev-master#7ea1c767e653a487559403af82dc11c12b2bd108",
+        "camspiers/json-pretty": "v1.0.0",
         "justinrainbow/json-schema": "*"
     },
     "require-dev": {
